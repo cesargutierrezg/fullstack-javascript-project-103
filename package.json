@@ -14,7 +14,6 @@
     "type": "git",
     "url": "git+https://github.com/cesargutierrezg/fullstack-javascript-project-103.git"
   },
-  
   "author": "cesar",
   "license": "ISC",
   "bugs": {
@@ -22,6 +21,7 @@
   },
   "homepage": "https://github.com/cesargutierrezg/fullstack-javascript-project-103#readme",
   "dependencies": {
-    "commander": "^14.0.2"
+    "commander": "^14.0.2",
+    "lodash": "^4.17.21"
   }
 }
