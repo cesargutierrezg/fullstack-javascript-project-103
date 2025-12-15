@@ -5,7 +5,12 @@
   "description": "[![Actions Status](https://github.com/cesargutierrezg/fullstack-javascript-project-103/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/cesargutierrezg/fullstack-javascript-project-103/actions)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
+    "test:watch": "NODE_OPTIONS=--experimental-vm-modules jest --watch",
+    "lint": "eslint ."
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "bin": {
     "gendiff": "./gendiff.js"
@@ -23,5 +28,9 @@
   "dependencies": {
     "commander": "^14.0.2",
     "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "eslint": "^9.39.2",
+    "jest": "^30.2.0"
   }
 }
