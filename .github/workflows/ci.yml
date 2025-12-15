@@ -1,8 +1,6 @@
 name: CI
 
-on:
-  - push
-  - pull_request
+on: [push]
 
 jobs:
   build:
@@ -14,10 +12,22 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 18
+      - name: Install dependencies
+        run: npm install
 
-      - run: npm install
-      - run: make lint
-      - run: make test
+      - name: Setup Code Climate test-reporter
+        run: |
+          curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+          chmod +x ./cc-test-reporter
+
+      - name: Before tests
+        run: ./cc-test-reporter before-build
+
+      - name: Run linter
+        run: make lint
+
+      - name: Run tests
+        run: make test
+
+      - name: After tests
+        run: ./cc-test-reporter after-build --coverage-input-type lcov
