@@ -1,7 +1,11 @@
 // src/genDiff.js
 import _ from 'lodash';
+import { parseFile } from './parsers.js';
 
-const genDiff = (obj1, obj2) => {
+const genDiff = (filepath1, filepath2) => {
+  const obj1 = parseFile(filepath1);
+  const obj2 = parseFile(filepath2);
+
   const keys = _.sortBy(_.union(Object.keys(obj1), Object.keys(obj2)));
 
   const result = keys.flatMap((key) => {
@@ -19,10 +23,11 @@ const genDiff = (obj1, obj2) => {
     if (val1 !== val2) {
       return [
         `  - ${key}: ${val1}`,
-        `  + ${key}: ${val2}`
+        `  + ${key}: ${val2}`,
       ];
     }
-    return `    ${key}: ${val1}`;  // iguales, sin signos
+
+    return `    ${key}: ${val1}`;
   });
 
   return `{\n${result.join('\n')}\n}`;
