@@ -1,3 +1,9 @@
+# maintainability
+[![Maintainability](https://qlty.sh/gh/cesargutierrezg/projects/fullstack-javascript-project-103/maintainability.svg)](https://qlty.sh/gh/cesargutierrezg/projects/fullstack-javascript-project-103)
+
+# Code Coverage
+[![Code Coverage](https://qlty.sh/gh/cesargutierrezg/projects/fullstack-javascript-project-103/coverage.svg)](https://qlty.sh/gh/cesargutierrezg/projects/fullstack-javascript-project-103)
+
 # Automatic tests
 
 After completing all the steps in the project, automatic tests will become available to you. Tests are run on each commit - once all tasks in the Hexlet interface are completed, make a commit, and the tests will run automatically.
