@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import yaml from 'js-yaml';
 
 // Obtiene la ruta absoluta del archivo
 export const getAbsolutePath = (filepath) =>
@@ -20,6 +21,9 @@ export const parseData = (data, format) => {
   switch (format) {
     case 'json':
       return JSON.parse(data);
+    case 'yml':
+    case 'yaml':
+      return yaml.load(data);
     default:
       throw new Error(`Formato no soportado: ${format}`);
   }

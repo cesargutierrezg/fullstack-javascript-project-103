@@ -19,3 +19,11 @@ test('gendiff flat json', () => {
 
   expect(genDiff(filepath1, filepath2)).toBe(expected.trim());
 });
+
+test('gendiff flat yaml', () => {
+  const filepath1 = getFixturePath('file1.yml');
+  const filepath2 = getFixturePath('file2.yml');
+  const expected = readFixture('expected.txt');
+
+  expect(genDiff(filepath1, filepath2)).toBe(expected.trim());
+});
