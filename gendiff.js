@@ -10,9 +10,11 @@ program
   .version('1.0.0')
   .argument('<filepath1>', 'first config file')
   .argument('<filepath2>', 'second config file')
-  .option('-f, --format <type>', 'output format')
-  .action((filepath1, filepath2) => {
-    console.log(genDiff(filepath1, filepath2));
+  // 👇 formato por defecto
+  .option('-f, --format <type>', 'output format', 'stylish')
+  .action((filepath1, filepath2, options) => {
+    const { format } = options;
+    console.log(genDiff(filepath1, filepath2, format));
   });
 
 program.parse(process.argv);

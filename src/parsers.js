@@ -14,7 +14,7 @@ export const readFile = (filepath) => {
 
 // Obtiene el formato a partir de la extensión del archivo
 export const getFormat = (filepath) =>
-  path.extname(filepath).slice(1); // "json"
+  path.extname(filepath).slice(1);
 
 // Parsea los datos según el formato
 export const parseData = (data, format) => {
@@ -29,9 +29,10 @@ export const parseData = (data, format) => {
   }
 };
 
-// Función principal que combina todo
+// Función principal
 export const parseFile = (filepath) => {
   const data = readFile(filepath);
   const format = getFormat(filepath);
   return parseData(data, format);
 };
+
