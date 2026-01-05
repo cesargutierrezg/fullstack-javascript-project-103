@@ -13,3 +13,6 @@ https://asciinema.org/a/voUifR5ro2FqSkHFtB522iLeo
 
 ### asciinema punto 8 del proyecto
  https://asciinema.org/a/PlP17ce1qY0P5LpB1MhKRFqnY
+
+### asciinema punto final del proyecto
+ https://asciinema.org/a/3Rwwi5fmZDBhbwGEK41VIdNSA
