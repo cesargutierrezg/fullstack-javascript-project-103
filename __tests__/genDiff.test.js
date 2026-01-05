@@ -35,3 +35,11 @@ test('gendiff nested json', () => {
 
   expect(genDiff(filepath1, filepath2)).toBe(expected.trim());
 });
+
+test('gendiff plain format', () => {
+  const filepath1 = getFixturePath('file1.nested.json');
+  const filepath2 = getFixturePath('file2.nested.json');
+  const expected = readFixture('expected.plain.txt');
+
+  expect(genDiff(filepath1, filepath2, 'plain')).toBe(expected.trim());
+});

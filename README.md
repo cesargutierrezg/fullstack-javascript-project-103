@@ -10,3 +10,6 @@ https://asciinema.org/connect/4e68f14a-b5b0-44e1-b931-11cd75778365
 
 ### ascinema punto 7 del proyecto
 https://asciinema.org/a/voUifR5ro2FqSkHFtB522iLeo
+
+### asciinema punto 8 del proyecto
+ https://asciinema.org/a/PlP17ce1qY0P5LpB1MhKRFqnY
