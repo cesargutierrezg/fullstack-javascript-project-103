@@ -16,8 +16,14 @@ jobs:
       - name: Run linter
         run: make lint
 
-      - name: Run tests with coverage
-        run: npm test -- --coverage
+      - name: Run tests & publish coverage
+        uses: paambaati/codeclimate-action@v5
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+        with:
+          coverageCommand: npm test -- --coverage
+          coverageLocations: |
+            coverage/lcov.info:lcov
 
 
 
