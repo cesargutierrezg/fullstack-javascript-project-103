@@ -13,7 +13,7 @@
     "testEnvironment": "node"
   },
   "bin": {
-    "gendiff": "./gendiff.js"
+    "gendiff": "./bin/gendiff.js"
   },
   "repository": {
     "type": "git",
