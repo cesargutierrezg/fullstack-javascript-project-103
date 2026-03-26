@@ -33,4 +33,3 @@ export const parseFile = (filepath) => {
   const format = getFormat(filepath);
   return parseData(content, format);
 };
-

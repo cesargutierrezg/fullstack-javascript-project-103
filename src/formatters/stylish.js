@@ -1,8 +1,7 @@
 import _ from 'lodash';
 
 const indentSize = 4;
-const getIndent = (depth, offset = 0) =>
-  ' '.repeat(depth * indentSize - offset);
+const getIndent = (depth, offset = 0) => ' '.repeat(depth * indentSize - offset);
 
 const stringify = (value, depth) => {
   if (!_.isPlainObject(value)) {
@@ -10,8 +9,7 @@ const stringify = (value, depth) => {
   }
 
   const lines = Object.entries(value).map(
-    ([key, val]) =>
-      `${getIndent(depth + 1)}${key}: ${stringify(val, depth + 1)}`
+    ([key, val]) => `${getIndent(depth + 1)}${key}: ${stringify(val, depth + 1)}`,
   );
 
   return `{\n${lines.join('\n')}\n${getIndent(depth)}}`;
@@ -40,7 +38,7 @@ const stylish = (tree, depth = 1) => {
       case 'nested':
         return `${indent}  ${node.key}: {\n${stylish(
           node.children,
-          depth + 1
+          depth + 1,
         )}\n${getIndent(depth)}}`;
 
       default:

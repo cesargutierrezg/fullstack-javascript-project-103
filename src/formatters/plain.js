@@ -19,7 +19,7 @@ const plain = (tree, parentPath = '') => {
       switch (node.type) {
         case 'added':
           return `Property '${propertyPath}' was added with value: ${formatValue(
-            node.value
+            node.value,
           )}`;
 
         case 'removed':
@@ -27,7 +27,7 @@ const plain = (tree, parentPath = '') => {
 
         case 'changed':
           return `Property '${propertyPath}' was updated. From ${formatValue(
-            node.value1
+            node.value1,
           )} to ${formatValue(node.value2)}`;
 
         case 'nested':
