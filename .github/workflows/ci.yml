@@ -18,6 +18,14 @@ jobs:
 
       - name: Run tests with coverage
         run: npm test -- --coverage
+        
+      - name: Publish coverage to Code Climate
+        uses: paambaati/codeclimate-action@v5
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+        with:
+          coverageLocations: |
+            coverage/lcov.info:lcov
 
 
 
